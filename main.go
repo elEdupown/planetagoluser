@@ -8,9 +8,9 @@ import (
 
 	"github.com/aws/aws-lambda-go/events"
 	lambda "github.com/aws/aws-lambda-go/lambda"
-	"github.com/planetagoluser/awsgo"
-	"github.com/planetagoluser/bd"
-	"github.com/planetagoluser/models"
+	"github.com/elEdupown/planetagoluser/awsgo"
+	"github.com/elEdupown/planetagoluser/bd"
+	"github.com/elEdupown/planetagoluser/models"
 )
 
 func main() {

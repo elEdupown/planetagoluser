@@ -3,8 +3,8 @@ package bd
 import (
 	"os"
 
-	"github.com/planetagoluser/models"
-	"github.com/planetagoluser/secretm"
+	"github.com/elEdupown/planetagoluser/models"
+	"github.com/elEdupown/planetagoluser/secretm"
 )
 
 var SecretModel models.SecretRDSJson

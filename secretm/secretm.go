@@ -6,8 +6,8 @@ import (
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/secretsmanager"
-	"github.com/planetagoluser/awsgo"
-	"github.com/planetagoluser/models"
+	"github.com/elEdupown/planetagoluser/awsgo"
+	"github.com/elEdupown/planetagoluser/models"
 )
 
 func GetSecret(secretName string) (models.SecretRDSJson, error) {

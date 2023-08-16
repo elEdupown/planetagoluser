@@ -1,4 +1,4 @@
-module github.com/planetagoluser
+module github.com/elEdupown/planetagoluser
 
 go 1.20
 
