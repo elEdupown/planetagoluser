@@ -9,7 +9,7 @@ import (
 	"github.com/aws/aws-lambda-go/events"
 	lambda "github.com/aws/aws-lambda-go/lambda"
 	"github.com/elEdupown/planetagoluser/awsgo"
-	"github.com/elEdupown/planetagoluser/bd"
+	"github.com/elEdupown/planetagoluser/db"
 	"github.com/elEdupown/planetagoluser/models"
 )
 
@@ -40,13 +40,13 @@ func ExecLambda(ctx context.Context, event events.CognitoEventUserPoolsPostConfi
 		}
 	}
 
-	err := bd.ReadSecret()
+	err := db.ReadSecret()
 	if err != nil {
 		fmt.Println("Error: " + err.Error())
 		return event, err
 	}
 
-	err = bd.SignUp(datos)
+	err = db.SignUp(datos)
 	return event, err
 }
 

@@ -1,13 +1,14 @@
 package db
 
 import (
-	"os"
-	_ "github.com/go-sql-driver/mysql"
+	"fmt"
+
 	"github.com/elEdupown/planetagoluser/models"
 	"github.com/elEdupown/planetagoluser/tools"
+	_ "github.com/go-sql-driver/mysql"
 )
 
-func SignUp(sig models.SignUp) error{
+func SignUp(sig models.SignUp) error {
 	fmt.Println("Start Register")
 
 	err := DbConnect()
@@ -15,7 +16,7 @@ func SignUp(sig models.SignUp) error{
 		return err
 	}
 
-	defer.Db.Close()
+	defer Db.Close()
 
 	sentence := "INSERT INTO users (User_Email, User_UUID, User_DateAdd) VALUES ('" + sig.UserEmail + "', '" + sig.UserUUID + "', '" + tools.FechaMySQL() + "')"
 	fmt.Println(sentence)
