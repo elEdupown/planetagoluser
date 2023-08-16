@@ -8,7 +8,9 @@ import (
 
 	"github.com/aws/aws-lambda-go/events"
 	lambda "github.com/aws/aws-lambda-go/lambda"
-	"github.com/elEdupown/planetagoluser/awsgo"
+	"github.com/planetagoluser/awsgo"
+	"github.com/planetagoluser/bd"
+	"github.com/planetagoluser/models"
 )
 
 func main() {
@@ -23,6 +25,27 @@ func ExecLambda(ctx context.Context, event events.CognitoEventUserPoolsPostConfi
 		err := errors.New("Error en los parametros, debe enviar SecretName")
 		return event, err
 	}
+
+	var datos models.SignUp
+
+	for row, att := range event.Request.UserAttributes {
+		switch row {
+		case "email":
+			datos.UserEmail = att
+			fmt.Println("Email: " + datos.UserEmail)
+		case "sub":
+			datos.UserUUID = att
+			fmt.Println("Sub: " + datos.UserUUID)
+
+		}
+	}
+
+	err := bd.ReadSecret()
+	if err != nil {
+		fmt.Println("Error: " + err.Error())
+		return event, err
+	}
+
 }
 
 func ValidateParams() bool {
