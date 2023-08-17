@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"github.com/aws/aws-lambda-go/events"
-	lambda "github.com/aws/aws-lambda-go/lambda"
+	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/elEdupown/planetagoluser/awsgo"
 	"github.com/elEdupown/planetagoluser/db"
 	"github.com/elEdupown/planetagoluser/models"
