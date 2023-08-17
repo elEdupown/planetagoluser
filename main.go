@@ -39,14 +39,17 @@ func ExecLambda(ctx context.Context, event events.CognitoEventUserPoolsPostConfi
 
 		}
 	}
+	fmt.Println("Holaaaaa 1")
 
 	err := db.ReadSecret()
 	if err != nil {
 		fmt.Println("Error: " + err.Error())
 		return event, err
 	}
+	fmt.Println("Holaaaaa 2")
 
 	err = db.SignUp(datos)
+	fmt.Println("Holaaaaa 3")
 	return event, err
 }
 
