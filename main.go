@@ -18,6 +18,7 @@ func main() {
 }
 
 func ExecLambda(ctx context.Context, event events.CognitoEventUserPoolsPostConfirmation) (events.CognitoEventUserPoolsPostConfirmation, error) {
+
 	awsgo.InitializeAWS()
 
 	if !ValidateParams() {
